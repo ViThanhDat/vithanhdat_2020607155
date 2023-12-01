@@ -1,0 +1,30 @@
+def tao_bao_cao_hoc_phan(du_lieu):
+    # Xử lý dữ liệu và tạo báo cáo học phần
+    # Trong ví dụ này, giả sử dữ liệu là một danh sách các bản ghi
+    # Mỗi bản ghi đại diện cho một học phần và chứa các thuộc tính như mã môn học, tên môn học, điểm số, v.v.
+    # Bạn cần điều chỉnh mã code dưới đây để phù hợp với cấu trúc dữ liệu cụ thể của bạn
+
+    # Mở tệp báo cáo để ghi thông tin
+    with open("bao_cao_hoc_phan.txt", "w") as file_bao_cao:
+        for hoc_phan in du_lieu:
+            ma_mon_hoc = hoc_phan["ma_mon_hoc"]
+            ten_mon_hoc = hoc_phan["ten_mon_hoc"]
+            diem = hoc_phan["diem"]
+
+            # Ghi thông tin vào tệp báo cáo
+            file_bao_cao.write("Mã môn học: {}\n".format(ma_mon_hoc))
+            file_bao_cao.write("Tên môn học: {}\n".format(ten_mon_hoc))
+            file_bao_cao.write("Điểm: {}\n".format(diem))
+            file_bao_cao.write("-------------------------\n")
+
+    print("Báo cáo học phần đã được tạo.")
+
+# Dữ liệu mẫu (giả định)
+du_lieu_hoc_phan = [
+    {"ma_mon_hoc": "MATH101", "ten_mon_hoc": "Toán cao cấp", "diem": 8.5},
+    {"ma_mon_hoc": "PHYS101", "ten_mon_hoc": "Vật lý cơ", "diem": 7.8},
+    {"ma_mon_hoc": "COMP101", "ten_mon_hoc": "Lập trình căn bản", "diem": 9.2}
+]
+
+# Gọi hàm để tạo báo cáo
+tao_bao_cao_hoc_phan(du_lieu_hoc_phan)
