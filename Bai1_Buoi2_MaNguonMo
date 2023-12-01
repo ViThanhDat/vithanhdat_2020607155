@@ -1,0 +1,85 @@
+import math
+
+def tinh_dien_tich_hinh_vuong(canh):
+    return canh ** 2
+
+def tinh_chu_vi_hinh_vuong(can):
+    return canh * 4
+
+def tinh_dien_tich_hinh_chu_nhat(chieu_dai, chieu_rong):
+    return chieu_dai * chieu_rong
+
+def tinh_chu_vi_hinh_chu_nhat(chieu_dai, chieu_rong):
+    return 2 * (chieu_dai + chieu_rong)
+
+def tinh_dien_tich_tam_giac(can_1, can_2, can_3):
+    p = (can_1 + can_2 + can_3) / 2
+    return math.sqrt(p * (p - can_1) * (p - can_2) * (p - can_3))
+
+def tinh_chu_vi_tam_giac(can_1, can_2, can_3):
+    return can_1 + can_2 + can_3
+
+def tinh_dien_tich_hinh_tron(ban_kinh):
+    return math.pi * ban_kinh ** 2
+
+def tinh_chu_vi_hinh_tron(ban_kinh):
+    return 2 * math.pi * ban_kinh
+
+while True:
+    print("Chương trình hỗ trợ học tập môn hình học")
+    print("1. Tính diện tích hình vuông")
+    print("2. Tính chu vi hình vuông")
+    print("3. Tính diện tích hình chữ nhật")
+    print("4. Tính chu vi hình chữ nhật")
+    print("5. Tính diện tích tam giác")
+    print("6. Tính chu vi tam giác")
+    print("7. Tính diện tích hình tròn")
+    print("8. Tính chu vi hình tròn")
+    print("0. Thoát chương trình")
+
+    lua_chon = int(input("Nhập lựa chọn của bạn: "))
+
+    if lua_chon == 0:
+        break
+    elif lua_chon == 1:
+        canh = float(input("Nhập độ dài cạnh hình vuông: "))
+        dien_tich = tinh_dien_tich_hinh_vuong(canh)
+        print("Diện tích hình vuông là:", dien_tich)
+    elif lua_chon == 2:
+        canh = float(input("Nhập độ dài cạnh hình vuông: "))
+        chu_vi = tinh_chu_vi_hinh_vuong(canh)
+        print("Chu vi hình vuông là:", chu_vi)
+    elif lua_chon == 3:
+        chieu_dai = float(input("Nhập độ dài chiều dài hình chữ nhật: "))
+        chieu_rong = float(input("Nhập độ dài chiều rộng hình chữ nhật: "))
+        dien_tich = tinh_dien_tich_hinh_chu_nhat(chieu_dai, chieu_rong)
+        print("Diện tích hình chữ nhật là:", dien_tich)
+    elif lua_chon == 4:
+        chieu_dai = float(input("Nhập độ dài chiều dài hình chữ nhật: "))
+        chieu_rong = float(input("Nhập độ dài chiều rộng hình chữ nhật: "))
+        chu_vi = tinh_chu_vi_hinh_chu_nhat(chieu_dai, chieu_rong)
+        print("Chu vi hình chữ nhật là:", chu_vi)
+    elif lua_chon == 5:
+        can_1 = float(input("Nhập độ dài cạnh thứ nhất của tam giác: "))
+        can_2 = float(input("Nhập độ dài cạnh thứ hai của tam giác: "))
+        can_3 = float(input("Nhập độ dài cạnh thứHai của tam giác: "))
+        dien_tich = tinh_dien_tich_tam_giac(can_1, can_2, can_3)
+        print("Diện tích tam giác là:", dien_tich)
+    elif lua_chon == 6:
+        can_1 = float(input("Nhập độ dài cạnh thứ nhất của tam giác: "))
+        can_2 = float(input("Nhập độ dài cạnh thứ hai của tam giác: "))
+        can_3 = float(input("Nhập độ dài cạnh thứ ba của tam giác: "))
+        chu_vi = tinh_chu_vi_tam_giac(can_1, can_2, can_3)
+        print("Chu vi tam giác là:", chu_vi)
+    elif lua_chon == 7:
+        ban_kinh = float(input("Nhập bán kính hình tròn: "))
+        dien_tich = tinh_dien_tich_hinh_tron(ban_kinh)
+        print("Diện tích hình tròn là:", dien_tich)
+    elif lua_chon == 8:
+        ban_kinh = float(input("Nhập bán kính hình tròn: "))
+        chu_vi = tinh_chu_vi_hinh_tron(ban_kinh)
+        print("Chu vi hình tròn là:", chu_vi)
+    else:
+        print("Lựa chọn không hợp lệ. Vui lòng chọn lại.")
+
+    print()  # In một dòng trống để tách các lần lặp
