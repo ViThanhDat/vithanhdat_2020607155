@@ -1,0 +1,21 @@
+import numpy as np
+from scipy import signal
+import matplotlib.pyplot as plt
+
+# Tạo tín hiệu đầu vào
+t = np.linspace(0, 1, 1000)  # Trục thời gian từ 0 đến 1 giây
+f = 5  # Tần số của tín hiệu đầu vào
+x = np.sin(2 * np.pi * f * t)  # Tạo tín hiệu sin với tần số f
+
+# Áp dụng bộ lọc FIR
+b = signal.firwin(30, 0.5)  # Thiết kế bộ lọc FIR với 30 hệ số
+filtered_x = signal.lfilter(b, 1, x)  # Áp dụng bộ lọc FIR vào tín hiệu đầu vào
+
+# Vẽ đồ thị
+plt.figure()
+plt.plot(t, x, label='Tín hiệu đầu vào')
+plt.plot(t, filtered_x, label='Tín hiệu đã lọc')
+plt.xlabel('Thời gian')
+plt.ylabel('Biên độ')
+plt.legend()
+plt.show()
