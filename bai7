@@ -1,0 +1,20 @@
+import cv2
+
+def apply_smoothing(image_path):
+    # Đọc ảnh vào
+    image = cv2.imread(image_path)
+
+    # Áp dụng bộ lọc làm mịn
+    smoothed_image = cv2.GaussianBlur(image, (15, 15), 0)
+
+    # Hiển thị ảnh gốc và ảnh sau khi làm mịn
+    cv2.imshow("Original Image", image)
+    cv2.imshow("Smoothed Image", smoothed_image)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+# Đường dẫn tới ảnh cần xử lý
+image_path = "path/to/your/image.jpg"
+
+# Gọi hàm để áp dụng bộ lọc làm mịn
+apply_smoothing(image_path)
